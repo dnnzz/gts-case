@@ -5,15 +5,33 @@
   background-color: whitesmoke;
   position: fixed;
   top: 0;
-  height: 60px;
+  height: 10.75rem;
   line-height: 60px;
   width: 100vw;
+  border-bottom: 1px solid black;
   &__links {
-    a {
+    &__button {
       font-size: 1.2rem;
+      height: 5.25rem;
+      width: 12.25rem;
+      border-radius: 28px;
+      background-color: white;
+
+      .language-selector {
+        font-size: 1.2rem;
+        height: 5.25rem;
+        width: 8.25rem;
+        background-color: transparent;
+        border: none;
+      }
+
+      a{
+        text-decoration: none;
+        color: black;
+      }
     }
-    a:not(:first-child) {
-      margin-left: 10px;
+    &__button:not(:first-child) {
+      margin-left: 1.6rem;
     }
   }
 }

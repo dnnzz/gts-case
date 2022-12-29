@@ -12,7 +12,7 @@
         <button class="close-btn" @click="closePopup">Close</button>
       </div>
       <div v-if="mode === 'confirm'" class="popup__confirm">
-        <h3 class="tilte">Confirm</h3>
+        <h3 class="title">Confirm</h3>
         <p class="message">{{ message }}</p>
         <button class="confirm-btn" @click="confirm">Yes</button>
         <button class="close-btn" @click="closePopup">No</button>
@@ -53,43 +53,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.popup {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.popup-container {
-  background-color: #fff;
-  border-radius: 5px;
-  padding: 20px;
-  max-width: 500px;
-  text-align: center;
-}
-
-.popup-success {
-  color: green;
-}
-
-.popup-error {
-  color: red;
-}
-
-button {
-  background-color: #fff;
-  border: none;
-  outline: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 0 10px;
-}
-</style>
