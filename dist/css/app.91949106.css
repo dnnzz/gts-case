@@ -1,0 +1,75 @@
+
+#app {
+  font-family: 'Roboto';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+}
+a{
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+.content{
+  margin-top: 100px;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+.button__wrapper button[data-v-633b8130]{
+  padding: 10px 40px;
+	cursor: pointer;
+	font-size: 20px;
+  border-radius: 10px;
+	border: 2px solid #000;
+	box-shadow: 10px 10px;
+	background-color: #a7c957;
+	transition: box-shadow 300ms ease, transform 500ms ease;
+}
+.button__wrapper button[data-v-633b8130]:hover {
+	box-shadow: none;
+}
+.button__wrapper button[data-v-633b8130]:active {
+	transform: scale(0.9);
+}
+
+
+.button__wrapper button[data-v-0eaa5889]{
+  padding: 10px 40px;
+	cursor: pointer;
+	font-size: 20px;
+  border-radius: 10px;
+	border: 2px solid #000;
+	box-shadow: 10px 10px;
+	background-color: lightsalmon;
+	transition: box-shadow 300ms ease, transform 500ms ease;
+}
+.button__wrapper button[data-v-0eaa5889]:hover {
+	box-shadow: none;
+}
+.button__wrapper button[data-v-0eaa5889]:active {
+	transform: scale(0.9);
+}
+
+
+.button__wrapper button[data-v-1b65d8cc]{
+  padding: 10px 40px;
+	cursor: pointer;
+	font-size: 20px;
+  border-radius: 10px;
+	border: 2px solid #000;
+	box-shadow: 10px 10px;
+	background-color: #ef7f1a;
+	transition: box-shadow 300ms ease, transform 500ms ease;
+}
+.button__wrapper button[data-v-1b65d8cc]:hover {
+	box-shadow: none;
+}
+.button__wrapper button[data-v-1b65d8cc]:active {
+	transform: scale(0.9);
+}
+
+.popup{position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center}.popup__wrapper{border-radius:5px;padding:70px;max-width:500px;text-align:center}.popup__wrapper--success{background-color:green}.popup__wrapper--error{background-color:red}.popup__wrapper--confirm{background-color:#f5f5f5}.popup button{background-color:#fff;border:none;outline:none;padding:10px 20px;border-radius:5px;cursor:pointer;margin:0 10px}
+.navbar{display:flex;justify-content:center;align-items:center;background-color:#f5f5f5;position:fixed;top:0;height:10.75rem;line-height:60px;width:100vw;border-bottom:1px solid #000}.navbar__links__button{font-size:1.2rem;height:5.25rem;width:12.25rem;border-radius:28px;background-color:#fff}.navbar__links__button .language-selector{font-size:1.2rem;height:5.25rem;width:8.25rem;background-color:rgba(0,0,0,0);border:none}.navbar__links__button a{text-decoration:none;color:#000}.navbar__links__button:not(:first-child){margin-left:1.6rem}@media(max-width: 1200px){.navbar__links__button{margin:0;height:3.25rem;width:5.25rem}.navbar__links .language-selector{font-size:1.2rem;height:auto;width:auto}}
