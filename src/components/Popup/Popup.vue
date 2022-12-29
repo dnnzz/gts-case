@@ -1,6 +1,11 @@
 <template>
   <div class="popup" v-if="showPopup">
-    <div class="popup__wrapper">
+    <div
+    v-bind:class="getClass" 
+    class="popup__wrapper">
+      <div class="popup__icon">
+        <svg-icon type="mdi" :path="mdiInformation" :size="48"></svg-icon>
+      </div>
       <div v-if="mode === 'success'" class="popup__success">
         <h3 class="title">Success</h3>
         <p class="message">{{ message }}</p>
@@ -22,8 +27,14 @@
 </template>
 
 <script>
+import { mdiInformation } from '@mdi/js';
 export default {
   name: "PopUp",
+  setup() {
+	return {
+			mdiInformation,
+	}
+  },
   props: {
     showPopup: {
       type: Boolean,
@@ -41,15 +52,31 @@ export default {
       type: Function,
       default: () => {},
     },
+    cancelAction: {
+      type: Function,
+      default: () => {},
+    },
   },
   methods: {
     closePopup() {
-      this.$emit("update:showPopup", false);
+      if(this.mode === 'confirm' && this.cancelAction) {
+        this.cancelAction();
+      } else {
+        this.$emit("update:showPopup", false);
+      }
     },
     confirm() {
       this.confirmAction();
-      this.closePopup();
-    },
+    }
   },
+  computed:{
+    getClass:function() {
+      return {
+        'popup__wrapper--success': this.mode === 'success',
+        'popup__wrapper--error': this.mode === 'error',
+        'popup__wrapper--confirm': this.mode === 'confirm',
+      }
+    }
+  }
 };
 </script>

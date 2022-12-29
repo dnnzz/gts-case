@@ -35,3 +35,21 @@
     }
   }
 }
+
+@media (max-width: 1200px) {
+  .navbar{
+    &__links{
+      &__button {
+        margin : 0;
+        height: 3.25rem;
+        width: 5.25rem;
+      }
+      .language-selector {
+        font-size: 1.2rem;
+        height: auto;
+        width: auto;
+      }
+    }
+  }
+}
+  

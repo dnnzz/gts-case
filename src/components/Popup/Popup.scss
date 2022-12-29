@@ -10,26 +10,23 @@
   justify-content: center;
 
   &__wrapper {
-    background-color: #fff;
     border-radius: 5px;
-    padding: 20px;
+    padding: 70px;
     max-width: 500px;
     text-align: center;
+
+    &--success {
+      background-color: green;
+    }
+  
+    &--error {
+      background-color: red;
+    }
+  
+    &--confirm {
+      background-color: whitesmoke;
+    }
   }
-
-  &__success {
-    color: green;
-
-  }
-
-  &__error {
-    color: red;
-  }
-
-  &__confirm {
-    color: lightsalmon;
-  }
-
   button {
     background-color: #fff;
     border: none;

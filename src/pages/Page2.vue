@@ -1,5 +1,5 @@
 <template>
-  <div class="page1">
+  <div class="page-2">
     <h1>Page 2</h1>
     <Popup
     v-bind:showPopup="showPopup"

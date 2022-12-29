@@ -1,15 +1,65 @@
 <template>
-  <div class="page3">
+  <div class="page-3">
     <h1>Page 3</h1>
+    <Popup
+    v-bind:showPopup="showPopup"
+    v-bind:mode="type"
+    v-bind:message="message"
+    v-bind:confirmAction="showSuccessPopup"
+    v-bind:cancelAction="showErrorPopup"
+    @update:showPopup="showPopup = $event"
+  />
+   <div class="button__wrapper">
+    <button @click="showConfirmPopup">Kaydet</button>
+   </div>
   </div>
 </template>
 
 <script>
 export default {
-  name:"Page-3"
+  name:"Page-3",
+  data() {
+    return {
+      showPopup: false,
+      type: 'confirm',
+      message: ''
+    }
+  },
+  methods: {
+    showConfirmPopup() {
+      this.type= 'confirm'
+      this.showPopup = true
+      this.message = 'Are you sure ?'
+    },
+    showSuccessPopup() {
+      this.showPopup = true
+      this.type = 'success'
+      this.message = 'Your action was successful!'
+    },
+    showErrorPopup() {
+      this.showPopup = true
+      this.type = 'error'
+      this.message = 'Your action was failed!'
+    }
+  }
 }
 </script>
 
-<style>
-
+<style scoped>
+.button__wrapper button{
+  padding: 10px 40px;
+	cursor: pointer;
+	font-size: 20px;
+  border-radius: 10px;
+	border: 2px solid #000;
+	box-shadow: 10px 10px;
+	background-color: #ef7f1a;
+	transition: box-shadow 300ms ease, transform 500ms ease;
+}
+.button__wrapper button:hover {
+	box-shadow: none;
+}
+.button__wrapper button:active {
+	transform: scale(0.9);
+}
 </style>
