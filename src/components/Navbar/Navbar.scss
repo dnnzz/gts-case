@@ -1,0 +1,19 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  background-color: whitesmoke;
+  position: fixed;
+  top: 0;
+  height: 60px;
+  line-height: 60px;
+  width: 100vw;
+  &__links {
+    a {
+      font-size: 1.2rem;
+    }
+    a:not(:first-child) {
+      margin-left: 10px;
+    }
+  }
+}
