@@ -1,6 +1,6 @@
 <template>
   <div class="page-1">
-    <h1>Page 1</h1>
+    <h1>{{ t('page') }} 1</h1>
     <Popup
     v-bind:showPopup="showPopup"
     v-bind:type="type"
@@ -8,14 +8,19 @@
     @update:showPopup="showPopup = $event"
   />
    <div class="button__wrapper">
-    <button @click="showSuccessPopup">Kaydet</button>
+    <button @click="showSuccessPopup">{{ t('submitBtnText') }}</button>
    </div>
   </div>
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n'
 export default {
   name:"Page-1",
+  setup() {
+    const { t } = useI18n() // use as global scope
+    return { t }
+  },
   data() {
     return {
       showPopup: false,
@@ -27,7 +32,7 @@ export default {
     showSuccessPopup() {
       this.showPopup = true
       this.type = 'success'
-      this.message = 'Your action was successful!'
+      this.message = this.t('successPopupText')
     }
   }
 }

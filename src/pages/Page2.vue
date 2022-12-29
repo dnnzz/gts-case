@@ -1,6 +1,6 @@
 <template>
   <div class="page-2">
-    <h1>Page 2</h1>
+    <h1>{{ t('page') }} 2</h1>
     <Popup
     v-bind:showPopup="showPopup"
     v-bind:mode="type"
@@ -8,14 +8,19 @@
     @update:showPopup="showPopup = $event"
   />
    <div class="button__wrapper">
-    <button @click="showErrorPopup">Kaydet</button>
+    <button @click="showErrorPopup">{{ t('page') }}</button>
    </div>
   </div>
 </template>
 
 <script>
+import { useI18n } from 'vue-i18n'
 export default {
   name:"Page-2",
+  setup() {
+    const { t } = useI18n() // use as global scope
+    return { t }
+  },
   data() {
     return {
       showPopup: false,
@@ -27,7 +32,7 @@ export default {
     showErrorPopup() {
       this.showPopup = true
       this.type = 'error'
-      this.message = 'Your action was failed!'
+      this.message = this.t('errorPopupText')
     }
   }
 }

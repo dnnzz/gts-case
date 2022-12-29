@@ -7,20 +7,20 @@
         <svg-icon type="mdi" :path="mdiInformation" :size="48"></svg-icon>
       </div>
       <div v-if="mode === 'success'" class="popup__success">
-        <h3 class="title">Success</h3>
+        <h3 class="title">{{ t('successPopupTitle') }}</h3>
         <p class="message">{{ message }}</p>
-        <button class="close-btn" @click="closePopup">Close</button>
+        <button class="close-btn" @click="closePopup">{{ t('closeButtonText') }}</button>
       </div>
       <div v-if="mode === 'error'" class="popup__error">
-        <h3 class="title">Error</h3>
+        <h3 class="title">{{ t('errorPopupTitle') }}</h3>
         <p class="message">{{ message }}</p>
-        <button class="close-btn" @click="closePopup">Close</button>
+        <button class="close-btn" @click="closePopup">{{ t('closeButtonText') }}</button>
       </div>
       <div v-if="mode === 'confirm'" class="popup__confirm">
-        <h3 class="title">Confirm</h3>
+        <h3 class="title">{{ t('confirmPopupTitle') }}</h3>
         <p class="message">{{ message }}</p>
-        <button class="confirm-btn" @click="confirm">Yes</button>
-        <button class="close-btn" @click="closePopup">No</button>
+        <button class="confirm-btn" @click="confirm">{{ t('confirmButtonText') }}</button>
+        <button class="close-btn" @click="closePopup">{{ t('cancelButtonText') }}</button>
       </div>
     </div>
   </div>
@@ -28,12 +28,12 @@
 
 <script>
 import { mdiInformation } from '@mdi/js';
+import { useI18n } from 'vue-i18n';
 export default {
   name: "PopUp",
   setup() {
-	return {
-			mdiInformation,
-	}
+    const { t } = useI18n() // use as global scope
+    return { t , mdiInformation}
   },
   props: {
     showPopup: {
