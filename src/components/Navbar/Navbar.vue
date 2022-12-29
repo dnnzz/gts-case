@@ -28,11 +28,6 @@ export default {
   setup() {
     const { t } = useI18n() // use as global scope
     return { t }
-  },
-  methods: {
-    changeLanguage(event) {
-      console.log('evt',event.target.value)
-    }
   }
 }
 </script>
